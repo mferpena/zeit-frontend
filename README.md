@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gestión de Tareas - Next.js
 
-## Getting Started
+Este proyecto es una aplicación de gestión de tareas desarrollada en **Next.js**. La aplicación permite a los usuarios buscar, agregar, editar y eliminar tareas de manera intuitiva y eficiente.
 
-First, run the development server:
+![Demostración de la aplicación](./Prueba.gif)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Características
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Búsqueda en tiempo real**: Filtra las tareas por título con una búsqueda reactiva.
+- **Gestión completa de tareas**: Crea, edita y elimina tareas fácilmente.
+- **Autenticación de usuario**: La aplicación redirige a los usuarios no autenticados a la página de inicio de sesión.
+- **Paginación de tareas**: Navega por las tareas con controles de paginación para facilitar la organización.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologías Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js**: Framework de React para aplicaciones web.
+- **Axios**: Para realizar solicitudes HTTP a la API de tareas.
+- **CSS**: Estilos personalizados para una interfaz atractiva y sencilla.
+- **TypeScript** (Opcional): Para una mejor tipificación en el desarrollo.
 
-## Learn More
+## Instalación y Ejecución
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clonar el repositorio**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   cd tu-repositorio
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Instalar dependencias**:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Ejecutar el servidor de desarrollo**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   ```
+
+4. **Abrir la aplicación en tu navegador**:
+   - Visita [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
+
+## Estructura del Proyecto
+
+- **pages/**: Contiene las páginas principales de la aplicación, incluidas las de autenticación y gestión de tareas.
+
+- **components/**: Componentes reutilizables de la interfaz, organizados siguiendo el enfoque de **Atomic Design**:
+
+  - **atoms/**: Elementos básicos e independientes como botones, campos de entrada, etc.
+  - **molecules/**: Combinaciones de átomos que forman estructuras pequeñas, como controles de paginación.
+  - **organisms/**: Componentes más complejos que combinan moléculas y átomos, como listas de tareas y formularios completos.
+
+- **core/services/**: Servicios para la interacción con la API de tareas, manejando las solicitudes HTTP y la comunicación con el backend.
+
+- **core/middlewares/**: Middlewares para la autenticación de usuarios, utilizando **hooks de React** para verificar y gestionar el estado de autenticación en cada página.
